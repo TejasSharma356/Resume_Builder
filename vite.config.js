@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Resume-Builder/",  // 👈 repo name here
+  base: "/Resume_uilder/",  // 👈 repo name here
 })
