@@ -1,0 +1,316 @@
+/* Resume Preview Container */
+.resume-preview-container {
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #000000; /* Restored black text */
+}
+
+/* Content Wrapper */
+.resume-content-wrapper {
+  width: 100%;
+  max-width: 900px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 3rem);
+  margin: 0 auto;
+  color: #000000; /* Ensure black text inside wrapper */
+}
+
+/* Resume Content */
+.resume-content {
+  background: white;
+  width: 100%;
+  max-width: 850px;
+  min-height: 500px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  color: #000000; /* Black text inside content */
+}
+
+/* PDF Download Button */
+.pdf-download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.download-pdf-btn {
+  background: linear-gradient(135deg, #2dd4bf 0%, #0891b2 100%);
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(45, 212, 191, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.download-pdf-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(45, 212, 191, 0.3);
+  background: linear-gradient(135deg, #0891b2 0%, #2dd4bf 100%);
+}
+
+.download-pdf-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(45, 212, 191, 0.2);
+}
+
+/* Header Section */
+.resume-header {
+  background: linear-gradient(135deg, #2dd4bf 0%, #0891b2 100%);
+  color: white;
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-circle {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-initials {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.header-info {
+  flex: 1;
+}
+
+.resume-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 0.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.resume-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0 0.6rem 0;
+  opacity: 0.9;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.contact-item a {
+  color: white;
+  text-decoration: underline;
+}
+
+.contact-item a:hover {
+  opacity: 0.8;
+}
+
+/* Main Content */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  grid-gap: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  flex: 1;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.right-column {
+  background: #fef3c7;
+  padding: 1.2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: fit-content;
+}
+
+/* Section Styling */
+.resume-section {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.8rem;
+}
+
+.resume-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0 0 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 2px solid #2dd4bf;
+  padding-bottom: 0.4rem;
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  min-width: 150px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.85rem;
+}
+
+.skill-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-badge {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .resume-content-wrapper {
+    padding: 1rem;
+    max-width: 100%;
+  }
+  .resume-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-gap: 1.2rem;
+  }
+  .right-column {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-preview-container {
+    padding: 0;
+  }
+  .resume-content-wrapper {
+    padding: 0.8rem;
+    min-height: 100vh;
+  }
+  .resume-content {
+    max-width: 100%;
+    margin-bottom: 0.8rem;
+  }
+  .resume-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  .contact-info {
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  .main-content {
+    padding: 1rem;
+  }
+}
+
+/* ✅ NEW STYLES FOR SLIMMER & TALLER PANEL */
+.transform-component-module_wrapper__SPB86 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.transform-component-module_content__FBWxo {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: start center;
+  gap: 3rem;
+  width: 835.8px;
+  transform: translate(8.28px, 31.5px) scale(0.8);
+  margin: 0;
+  padding: 0;
+  transform-origin: top left;
+  pointer-events: auto;
+  color: #000000; /* Ensure black text inside transformed content */
+}
+
+
+/* Print hints for A4 export (optional but recommended) */
+@media print {
+  .resume-content {
+    width: 210mm;
+    min-height: 297mm;
+    max-width: 210mm;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}

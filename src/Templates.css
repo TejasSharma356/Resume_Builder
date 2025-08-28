@@ -1,0 +1,23 @@
+.resume-preview.template1 {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #fff;
+  color: #222;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.resume-preview.template1 h1 {
+  color: #2b4c7e;
+}
+
+.resume-preview.template2 {
+  font-family: "Georgia", serif;
+  padding: 20px;
+  background: #f8f9fa;
+  border-left: 6px solid #e63946;
+  color: #111;
+}
+.resume-preview.template2 h1 {
+  color: #e63946;
+  text-transform: uppercase;
+}

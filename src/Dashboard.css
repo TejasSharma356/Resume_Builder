@@ -1,0 +1,349 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #fff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 2rem;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 2.2rem; /* slightly smaller */
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* narrower cards */
+  gap: 1.25rem; /* tighter grid gap */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Resume Cards */
+.resume-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 300px; /* reduced height */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.resume-card:hover {
+  transform: translateY(-4px);
+  border-color: #4a90e2;
+  box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
+}
+
+/* Create Card */
+.create-card {
+  border: 2px dashed #444;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-card:hover {
+  border-color: #4a90e2;
+  background: rgba(74, 144, 226, 0.05);
+}
+
+.create-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1.5rem; /* tighter padding */
+  text-align: center;
+}
+
+.plus-icon {
+  font-size: 2.5rem; /* smaller icon */
+  color: #666;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s;
+}
+
+.create-card:hover .plus-icon {
+  color: #4a90e2;
+}
+
+.create-title {
+  font-size: 1.05rem; /* smaller */
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.4rem 0;
+}
+
+.create-subtitle {
+  font-size: 0.85rem; /* smaller */
+  color: #888;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Import Card */
+.import-card {
+  border: 2px dashed #444;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+.import-card:hover {
+  border-color: #28a745;
+  background: rgba(40, 167, 69, 0.05);
+}
+
+.import-icon {
+  font-size: 2.5rem; /* smaller */
+  color: #666;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s;
+}
+
+.import-card:hover .import-icon {
+  color: #28a745;
+}
+
+/* Resume Card Content */
+.resume-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resume-preview {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2a2a2a;
+  padding: 1rem;           /* tighter padding */
+  min-height: 120px;       /* reduced to make room for buttons */
+}
+
+.preview-placeholder {
+  font-size: 2.2rem;       /* smaller */
+  color: #666;
+}
+
+/* Resume Info - FIXED CONTAINER */
+.resume-info {
+  padding: 0.75rem;        /* reduced padding */
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+  flex-shrink: 0;
+  height: auto;
+  overflow: hidden;
+}
+
+.resume-name {
+  font-size: 1rem;         /* smaller text */
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.2rem 0;    /* tighter margin */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resume-date {
+  font-size: 0.75rem;      /* smaller */
+  color: #888;
+  margin: 0 0 0.75rem 0;   /* tighter margin */
+}
+
+/* BUTTONS - PROPERLY SIZED AND CONTAINED */
+.resume-actions {
+  display: flex;
+  gap: 0.4rem;             /* smaller gap */
+  margin-top: auto;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;       /* keep in one row */
+}
+
+.action-btn {
+  flex: 1;
+  padding: 0.45rem 0.6rem; /* smaller padding */
+  border: none;
+  border-radius: 6px;
+  font-size: 0.72rem;      /* smaller font */
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 26px;        /* smaller height */
+  max-width: none;
+  color: white !important;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.edit-btn {
+  background: #4a90e2 !important;
+  color: #fff !important;
+}
+
+.edit-btn:hover {
+  background: #357abd !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+.preview-btn {
+  background: #6c757d !important;
+  color: #fff !important;
+}
+
+.preview-btn:hover {
+  background: #5a6268 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.delete-btn {
+  background: #e74c3c !important;
+  color: #fff !important;
+}
+
+.delete-btn:hover {
+  background: #c0392b !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+}
+
+/* Ensure buttons stay inside cards */
+.action-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1100px) {
+  .resume-grid {
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); /* slightly narrower */
+    gap: 1.1rem; /* a bit tighter */
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.9rem;
+  }
+  
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  
+  .resume-card {
+    height: 280px; /* reduced mobile height */
+  }
+  
+  .resume-actions {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  
+  .action-btn {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.7rem;
+    min-height: 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 0.5rem;
+  }
+  
+  .action-btn {
+    width: 100%;
+  }
+}
+
+/* Ensure full height and width coverage */
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #0f0f0f;
+}
+
+#root {
+  background: #0f0f0f;
+  min-height: 100vh;
+}
+
+/* Fix any container issues */
+.dashboard-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0f0f0f;
+  z-index: -1;
+}
+
+
+/* Dashboard.css additions/overrides */
+
+.resume-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.action-btn.small-btn {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Preview Box inside card */
+.resume-preview .preview-box {
+  width: 100%;
+  height: 150px;
+  background: #2a2a2a;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.preview-text {
+  font-size: 0.9rem;
+  color: #aaa;
+}

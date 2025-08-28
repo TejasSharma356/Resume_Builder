@@ -1,0 +1,469 @@
+/* ResumeForm.css */
+
+.resume-form-container {
+  display: flex;
+  height: 100vh;
+  background: #0f0f0f;
+  color: #fff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Left Panel - Form (45% width - expanded from 35%) */
+.form-panel {
+  width: 45%;
+  background: #1a1a1a;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #333;
+  background: #222;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-left h1 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.action-btn {
+  padding: 0.6rem 1.2rem; /* Increased from 0.1em */
+  border: none;
+  border-radius: 6px; /* Fixed from 3 */
+  font-size: 0.85rem; /* Fixed from 0.6m */
+  font-weight: 500; /* Increased from 400 */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.save-btn {
+  background: #28a745;
+  color: #ffffff;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+.preview-btn {
+  background: #4a90e2; /* Changed from #e24a4a */
+  color: #fff;
+}
+
+.preview-btn:hover {
+  background: #357abd;
+}
+
+.form-content {
+  flex: 1;
+  padding: 1.5rem 2rem;
+}
+
+/* Form Sections */
+.form-section {
+  margin-bottom: 2rem;
+  background: #222;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #333;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.add-btn {
+  background: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #357abd;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 0.5rem 0.65rem;
+  color: #fff;
+  font-size: 0.8rem;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #888;
+}
+
+.summary-textarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.4;
+}
+
+/* Editor Toolbar */
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: #2a2a2a;
+  border-radius: 6px;
+  border: 1px solid #444;
+}
+
+.toolbar-btn {
+  background: transparent;
+  color: #888;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-btn:hover {
+  background: #444;
+  color: #fff;
+}
+
+/* Buttons */
+.add-field-btn {
+  background: transparent;
+  color: #4a90e2;
+  border: 2px dashed #4a90e2;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.add-field-btn:hover {
+  background: rgba(74, 144, 226, 0.1);
+  border-style: solid;
+}
+
+.remove-btn {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}
+
+/* Array Items */
+.array-item {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #3a3a3a;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.item-header h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Right Panel - Preview (55% width - reduced from 65%) */
+.preview-panel {
+  width: 55%;
+  background: #ffffff;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.preview-header {
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.preview-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.preview-content {
+  flex: 1;
+  padding: 2rem;
+  background: #ffffff;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+  width: 100%;
+  /* Removed: justify-content: center; align-items: flex-start; */
+}
+
+/* New class to center the preview */
+.centered-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* Make the resume preview use full available space */
+.preview-content .resume-preview-container {
+  width: 100%;
+  max-width: 850px; /* Increased from 800px */
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+  min-height: auto;
+  background: transparent;
+}
+
+.preview-content .resume-content-wrapper {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  min-height: auto;
+}
+
+.preview-content .resume-content {
+  width: 100%;
+  max-width: 100%;
+  min-height: auto;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Scrollbar Styling */
+.form-panel::-webkit-scrollbar,
+.preview-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-panel::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.form-panel::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 3px;
+}
+
+.form-panel::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+.preview-panel::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+.preview-panel::-webkit-scrollbar-thumb {
+  background: #dee2e6;
+  border-radius: 3px;
+}
+
+.preview-panel::-webkit-scrollbar-thumb:hover {
+  background: #adb5bd;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .form-panel {
+    width: 42%;
+  }
+  
+  .preview-panel {
+    width: 58%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .form-panel {
+    width: 40%;
+  }
+  
+  .preview-panel {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .resume-form-container {
+    flex-direction: column;
+  }
+  
+  .form-panel,
+  .preview-panel {
+    width: 100%;
+  }
+  
+  .preview-panel {
+    height: 50vh;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-content {
+    padding: 1rem 1.5rem;
+  }
+  
+  .form-header {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .action-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .editor-toolbar {
+    padding: 0.6rem;
+  }
+  
+  .array-item {
+    padding: 1rem;
+  }
+  
+  .form-panel {
+    width: 100%;
+  }
+  
+  .preview-panel {
+    width: 100%;
+  }
+}
+
+/* SMALLER INPUT STYLES */
+.form-input-small {
+  padding: 0.5rem 0.65rem !important;
+  font-size: 0.8rem !important;
+  min-height: 36px !important;
+  border-radius: 4px !important;
+}
+
+.form-textarea-small {
+  padding: 0.5rem 0.65rem !important;
+  font-size: 0.8rem !important;
+  min-height: 120px !important;
+  border-radius: 4px !important;
+}
+
+.form-section {
+  padding: 1rem 1.5rem !important;
+}
