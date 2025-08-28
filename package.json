@@ -3,12 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/TejasSharma356/Resume_Builder",
+  "homepage": "https://tejassharma356.github.io/Resume_Builder/",
   "scripts": {
-    "start": "react-scripts start",
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -43,9 +41,9 @@
     "tailwindcss": "^4.1.12",
     "vite": "^7.1.2"
   },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "Resume Builder React + Vite project",
   "main": "eslint.config.js",
   "keywords": [],
-  "author": "",
+  "author": "Tejas Sharma",
   "license": "ISC"
 }
