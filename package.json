@@ -3,7 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+<<<<<<< HEAD
   "homepage": "https://github.com/TejasSharma356/Resume_uilder",
+=======
+  "homepage": "https://github.com/TejasSharma356/Resume-Builder",
+>>>>>>> d876bbe4e477a9b14685c19819f090b923c54511
   "scripts": {
     "start": "react-scripts start",
     "dev": "vite",
