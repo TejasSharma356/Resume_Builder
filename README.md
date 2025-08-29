@@ -78,6 +78,3 @@ src/
 └── App.jsx              # Main app component
 ```
 
-## License
-
-MIT License
