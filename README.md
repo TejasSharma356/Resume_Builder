@@ -21,7 +21,7 @@ Easily create, preview, and download resumes with a clean UI and customizable se
 - [React Router](https://reactrouter.com/) – routing
 - [Tailwind CSS](https://tailwindcss.com/) (or CSS modules, if used)
 - [shadcn/ui](https://ui.shadcn.com/) (optional components)
-- Deployment: [Vercel](https://vercel.com/)
+- Deployment: [Vercel](https://resume-builder-alpha-seven-83.vercel.app/)
 
 ---
 
