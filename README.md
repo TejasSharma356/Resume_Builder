@@ -87,15 +87,6 @@ npm run preview
    ```
 6. Deploy 🎉
 
----
-
-## 📸 Screenshots
-
-| Login Page | Resume Preview | Dashboard |
-|------------|----------------|-----------|
-| (screenshot1) | (screenshot2) | (screenshot3) |
-
----
 
 ## 🤝 Contributing
 Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change.
