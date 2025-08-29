@@ -31,11 +31,11 @@ A modern, Firebase-powered resume builder built with React and Vite.
 
 1. Clone the repository
 ```bash
-git clone <your-repo-url>
-cd Resume_Builder-tejas-
+git clone https://github.com/your-username/Resume_Builder.git
+cd Resume_Builder
 ```
 
-2. Install dependencies
+### 2. Install dependencies
 ```bash
 npm install
 ```
