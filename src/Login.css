@@ -127,6 +127,7 @@ body[data-theme="light"] {
 .login-provider-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0.7rem 1.5rem;
   background: var(--input-bg);
   color: var(--text-color);
@@ -137,6 +138,7 @@ body[data-theme="light"] {
   cursor: pointer;
   border: 1px solid #353535;
   transition: background .2s, color .2s;
+  width: 100%;
 }
 .login-provider-btn:hover {
   background: #333;

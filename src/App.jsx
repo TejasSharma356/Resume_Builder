@@ -1,8 +1,11 @@
 // App.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from './firebase';
 import Landing from "./Landing";
 import Login from "./Login";
+import Signup from "./Signup";
 import Dashboard from "./Dashboard";
 import ResumeForm from "./ResumeForm";
 import ResumePreview from "./ResumePreview";
@@ -32,8 +35,19 @@ const createEmptyResume = (name = "") => ({
 
 function App() {  
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [resumes, setResumes] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
 
   // Add a new resume with a name and select it
   const addResume = (name) => {
@@ -96,6 +110,12 @@ function App() {
           element={user ? <Navigate to="/dashboard" replace /> : <Login onLogin={setUser} />} 
         />
 
+        {/* Signup Page */}
+        <Route 
+          path="/signup" 
+          element={user ? <Navigate to="/dashboard" replace /> : <Signup onLogin={setUser} />} 
+        />
+
         {/* Dashboard */}
         <Route
           path="/dashboard"
@@ -107,6 +127,7 @@ function App() {
                 currentIndex={currentIndex}
                 setCurrentIndex={setCurrentIndex}
                 addResume={addResume}
+                user={user}
               />
             ) : (
               <Navigate to="/login" replace />
