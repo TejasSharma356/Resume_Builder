@@ -1,38 +1,39 @@
-// login.jsx
 import React, { useState, useEffect } from "react";
-import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { auth } from './firebase';
 import { useNavigate } from "react-router-dom";
-import "./Login.css"; // Import your CSS file
+import "./Login.css";
 
-const Login = ({ onLogin }) => {
-  const [email, setEmail] = useState("");      // form state
-  const [password, setPassword] = useState(""); // form state
-  const [theme, setTheme] = useState("dark");   // 'dark' or 'light'
+const Signup = ({ onLogin }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [theme, setTheme] = useState("dark");
   const navigate = useNavigate();
 
-  // Apply theme by updating data-theme attribute on <body>.
   useEffect(() => {
     document.body.setAttribute("data-theme", theme);
   }, [theme]);
 
-  // Handle login logic with Firebase
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      alert("Please enter email and password");
+    if (!email || !password || !confirmPassword) {
+      alert("Please fill all fields");
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert("Passwords don't match");
       return;
     }
     
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       onLogin(userCredential.user);
     } catch (error) {
-      alert("Login failed: " + error.message);
+      alert("Signup failed: " + error.message);
     }
   };
 
-  // Handle Google sign-in
   const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
@@ -46,34 +47,22 @@ const Login = ({ onLogin }) => {
   return (
     <div className="login-bg">
       <form className="login-container" onSubmit={handleSubmit}>
-        {/* Header: Brand and theme toggle */}
-        <div
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          }}
-        >
+        <div style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <span className="login-title">SkillSculpt</span>
-          {/* Toggle between light and dark mode */}
           <button
             type="button"
             className="theme-toggle-btn"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            aria-label="Switch theme"
           >
             {theme === "dark" ? "🌙" : "☀️"}
           </button>
         </div>
 
-        {/* Subtitle and register link */}
-        <div className="login-subtitle">Sign in to your account</div>
+        <div className="login-subtitle">Create your account</div>
         <div className="login-footer" style={{ marginBottom: "1.2rem" }}>
-          Don't have an account? <span className="login-link" onClick={() => navigate("/signup")}>Create one now</span>
+          Already have an account? <span className="login-link" onClick={() => navigate("/login")}>Sign in</span>
         </div>
 
-        {/* Email input */}
         <label className="login-form-label">Email</label>
         <input
           type="email"
@@ -83,7 +72,6 @@ const Login = ({ onLogin }) => {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        {/* Password input */}
         <label className="login-form-label">Password</label>
         <input
           type="password"
@@ -93,15 +81,22 @@ const Login = ({ onLogin }) => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {/* Login button */}
+        <label className="login-form-label">Confirm Password</label>
+        <input
+          type="password"
+          className="login-input"
+          placeholder="Confirm Password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+        />
+
         <button className="login-btn" type="submit">
-          Sign in
+          Create Account
         </button>
 
         <div className="login-footer" style={{ marginTop: "0", marginBottom: "0.2rem" }}>
           or continue with
         </div>
-        {/* Social login */}
         <div className="login-provider-row">
           <button
             type="button"
@@ -117,4 +112,4 @@ const Login = ({ onLogin }) => {
   );
 };
 
-export default Login;
+export default Signup;

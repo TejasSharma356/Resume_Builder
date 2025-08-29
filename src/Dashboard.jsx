@@ -1,6 +1,7 @@
 // Dashboard.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 import "./Dashboard.css";
 
 const formatDate = (iso) => {
@@ -17,7 +18,7 @@ const formatDate = (iso) => {
   }
 };
 
-function Dashboard({ resumes, setResumes, currentIndex, setCurrentIndex, addResume }) {
+function Dashboard({ resumes, setResumes, currentIndex, setCurrentIndex, addResume, user }) {
   const navigate = useNavigate();
 
   const handleCreate = () => {
@@ -58,7 +59,9 @@ function Dashboard({ resumes, setResumes, currentIndex, setCurrentIndex, addResu
   };
 
   return (
-    <div className="dashboard-container">
+    <div>
+      <Navbar user={user} />
+      <div className="dashboard-container">
       <div className="dashboard-header">
         <h1 className="dashboard-title">Resumes</h1>
       </div>
@@ -119,6 +122,7 @@ function Dashboard({ resumes, setResumes, currentIndex, setCurrentIndex, addResu
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 // Landing.jsx
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Landing.css";
 
 // Component for the landing page with light/dark theme toggle
@@ -8,9 +9,11 @@ const Landing = () => {
   // Theme state, default is 'dark'
   const [theme, setTheme] = useState("dark");
 
-  // Handle navigation (replace this with your routing logic if needed)
+  const navigate = useNavigate();
+
+  // Handle navigation to login page
   const handleGetStarted = () => {
-    window.location.href = "/login";
+    navigate("/login");
   };
 
   // Set the theme on the <body>
