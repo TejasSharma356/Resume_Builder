@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAWUPSxnYKax_vB2wbNohx5XlC8C3qSnCI",
+  apiKey: "Get_Your_API_Key",
   authDomain: "tejaspro-ddd2f.firebaseapp.com",
   projectId: "tejaspro-ddd2f",
   storageBucket: "tejaspro-ddd2f.firebasestorage.app",
